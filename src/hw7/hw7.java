@@ -5,8 +5,8 @@ public class hw7 {
 	public static void main(String[] args) {
 		AnimalClassTester qa = new AnimalClassTester();
 		
-		Object[] animalObjects = { new Tyrannosaur(),  new Penguin(), new Cow()};
-		TestAnimalObjectParent[] animalObjectTests = { new TestAnimalTyrannosaur(),  new TestAnimalPenguin(), new TestAnimalCow()};
+		Object[] animalObjects = { new Tyrannosaur(),  new Penguin(), new Cow(), new TreeClimbingOctopus()};
+		TestAnimalObjectParent[] animalObjectTests = { new TestAnimalTyrannosaur(),  new TestAnimalPenguin(), new TestAnimalCow(), new TestAnimalTreeClimbingOctopus()};
 				
 		for(int i=0; i < animalObjectTests.length; i++) {
 			
