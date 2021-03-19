@@ -3,7 +3,7 @@ package hw7;
 public class Tyrannosaur {
 	
 	public String getName() {
-		return "Tyranosaurus Rex";
+		return "Tyrannosaurus Rex";
 	}
 	
 	public String roar() {

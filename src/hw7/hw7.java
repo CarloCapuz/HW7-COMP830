@@ -5,27 +5,28 @@ public class hw7 {
 	public static void main(String[] args) {
 		AnimalClassTester qa = new AnimalClassTester();
 		
-		Tyrannosaur clarence = new Tyrannosaur();
-		if (qa.testAnimalObject((Object) clarence)) {
-			System.out.println("Tyrranosaur class passes");
-		} else {
-			System.out.println(">>>>Tyrranosaur class Failed!<<<<");
+		Object[] animalObjects = { new Tyrannosaur(),  new Penguin(), new Cow()};
+		TestAnimalObjectParent[] animalObjectTests = { new TestAnimalTyrannosaur(),  new TestAnimalPenguin(), new TestAnimalCow()};
+				
+		for(int i=0; i < animalObjectTests.length; i++) {
+			
+			Object animalObject = animalObjects[i];
+			
+			qa.setTestAnimalObjectParent(animalObjectTests[i]);
+
+			if (qa.testAnimalObject(animalObject)) {
+				System.out.println(getClassName(animalObject)+" class passes");
+			} else {
+				System.out.println(">>>>"+getClassName(animalObject)+" class Failed!<<<<");
+			}
+			
+			qa.resetTestAnimalObjectParent();
 		}
-		
-		Penguin opus = new Penguin();
-		if (qa.testAnimalObject((Object)opus)) {
-			System.out.println("Penguin class passes");
-		} else {
-			System.out.println(">>>>Penguin class Failed!<<<<");
-		}
-		
-		Cow mrsolearys = new Cow();
-		if (qa.testAnimalObject(mrsolearys)) {
-			System.out.println("Cow class passes");
-		} else {
-			System.out.println(">>>>Cow class Failed!<<<<");
-		}		
-		
+	}
+
+	public static String getClassName(Object obj) {
+		String className = obj.getClass() + "";
+		return className.substring(className.lastIndexOf(".") + 1, className.length());
 	}
 
 }
